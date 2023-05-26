@@ -20,6 +20,15 @@ class DatabaseSeeder extends Seeder
         Category::truncate();  
         Post::truncate();
 
+
+        $user = User::factory()->create([
+            'name'=> 'John Doe'
+        ]);
+
+        Post::factory(5)->create([
+            'user_id'=>$user->id
+        ]);
+/*
         $user = User::factory()->create();
 
         $personal = Category::create([
@@ -42,8 +51,8 @@ class DatabaseSeeder extends Seeder
             'category_id'=> $family->id,
             'title' => 'My Family Post',
             'slug' => 'my-family-post',
-            'excerpt' => 'Lorem ipsum dolar sit amet.',
-            'body' => 'Body of the post Lorem ipsum ala bala dura bura'
+            'excerpt' => '<p>Lorem ipsum dolar sit amet.</p>',
+            'body' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur. Donec enim diam vulputate ut pharetra. Vitae justo eget magna fermentum iaculis. Malesuada fames ac turpis egestas. Feugiat vivamus at augue eget arcu. Blandit massa enim nec dui nunc mattis enim ut. Metus dictum at tempor commodo ullamcorper. Sed velit dignissim sodales ut eu sem integer. In eu mi bibendum neque egestas congue. Id nibh tortor id aliquet lectus proin nibh. Sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis.</p>'
         ]);
 
         Post::create([
@@ -51,8 +60,8 @@ class DatabaseSeeder extends Seeder
             'category_id'=> $personal->id,
             'title' => 'My Personal Post',
             'slug' => 'my-personal-post',
-            'excerpt' => 'Lorem ipsum dolar sit amet.',
-            'body' => 'Body of the post Lorem ipsum ala bala dura bura'
+            'excerpt' => '<p>Lorem ipsum dolar sit amet.</p>',
+            'body' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur. Donec enim diam vulputate ut pharetra. Vitae justo eget magna fermentum iaculis. Malesuada fames ac turpis egestas. Feugiat vivamus at augue eget arcu. Blandit massa enim nec dui nunc mattis enim ut. Metus dictum at tempor commodo ullamcorper. Sed velit dignissim sodales ut eu sem integer. In eu mi bibendum neque egestas congue. Id nibh tortor id aliquet lectus proin nibh. Sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis.</p>'
         ]);
 
         Post::create([
@@ -60,9 +69,9 @@ class DatabaseSeeder extends Seeder
             'category_id'=> $work->id,
             'title' => 'My Work Post',
             'slug' => 'my-work-post',
-            'excerpt' => 'Lorem ipsum dolar sit amet.',
-            'body' => 'Body of the post Lorem ipsum ala bala dura bura'
-        ]);
+            'excerpt' => '<p>Lorem ipsum dolar sit amet.</p>',
+            'body' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur. Donec enim diam vulputate ut pharetra. Vitae justo eget magna fermentum iaculis. Malesuada fames ac turpis egestas. Feugiat vivamus at augue eget arcu. Blandit massa enim nec dui nunc mattis enim ut. Metus dictum at tempor commodo ullamcorper. Sed velit dignissim sodales ut eu sem integer. In eu mi bibendum neque egestas congue. Id nibh tortor id aliquet lectus proin nibh. Sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis./p>'
+        ]);*/
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
